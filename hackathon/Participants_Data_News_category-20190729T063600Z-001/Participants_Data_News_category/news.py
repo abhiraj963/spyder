@@ -37,7 +37,7 @@ news_category.add(Dense(10000,input_shape = (21659,), kernel_initializer= 'unifo
 news_category.add(Dense(3, kernel_initializer= 'uniform', activation= 'softmax'))
 news_category.compile(optimizer='adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
-news_category.fit(X_train,y_train, batch_size=1, epochs=10)
+news_category.fit(X_train,y_train, batch_size=10, epochs=100)
 predictions = news_category.predict(X_test)
 
 from sklearn.metrics import confusion_matrix, classification_report
